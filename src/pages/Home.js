@@ -20,7 +20,7 @@ function Home() {
 
   return (
     <div className="w-full overflow-hidden">
-      <div className="relative w-full h-[400px]">
+      <div className="relative w-full h-[540px]">
         {images.map((img, index) => (
           <img
             key={index}
