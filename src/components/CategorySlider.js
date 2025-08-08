@@ -141,7 +141,7 @@ const CategorySlider = () => {
 
   return (
     <div className="w-full bg-gray-50 py-4 category-slider">
-      <div className="relative max-w-7xl mx-auto px-2 sm:px-4">
+      <div className="relative max-w-7xl mx-auto py-8 px-2 sm:px-4">
         
         {/* Navigation Arrows */}
         <button

@@ -138,20 +138,47 @@ export default function NavbarReplica() {
         </div>
       </div>
 
-      {/* Top Menu Bar - Always Visible */}
-      <div className="bg-gray-50 border-b border-gray-200">
+      {/* Mobile Top Bar */}
+      <div className="md:hidden bg-white border-b border-gray-200">
+        <div className="flex items-center justify-between px-4 py-3">
+          {/* Toggle Menu */}
+          <button 
+            className="p-2 hover:bg-gray-100 rounded-lg transition-colors"
+            onClick={() => setIsMobileMenuOpen(true)}
+          >
+            <Menu size={20} className="text-gray-600" />
+          </button>
+
+          {/* noon Logo */}
+          <div className="text-xl font-bold text-gray-900">
+            noon
+          </div>
+
+          {/* Search Bar */}
+          <div className="flex-1 mx-4">
+            <div className="relative">
+              <input
+                type="text"
+                placeholder="What are you looking for?"
+                className="w-full pl-4 pr-10 py-2 border border-gray-300 rounded-lg focus:border-orange-500 focus:outline-none text-sm bg-gray-50 focus:bg-white"
+              />
+              <Search size={16} className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-400" />
+            </div>
+          </div>
+
+          {/* Heart Icon */}
+          <button className="p-2 hover:bg-gray-100 rounded-lg transition-colors">
+            <Heart size={20} className="text-gray-600" />
+          </button>
+        </div>
+      </div>
+
+      {/* Desktop Top Menu Bar */}
+      <div className="hidden md:block bg-gray-50 border-b border-gray-200">
         <div className="w-[100%] mx-auto px-4 sm:px-6 lg:px-8  mid-nav">
           <div className="flex items-center justify-between h-12">
-            {/* Mobile menu button */}
-            <button 
-              className="md:hidden p-2 hover:bg-gray-200 rounded-lg transition-colors"
-              onClick={() => setIsMobileMenuOpen(true)}
-            >
-              <Menu size={20} className="text-gray-600" />
-            </button>
-
             {/* Desktop Navigation */}
-            <div className="hidden md:flex items-center space-x-6 text-sm  scrollbar-hide nav-top-items">
+            <div className="flex items-center space-x-6 text-sm  scrollbar-hide nav-top-items">
               <a href="#home" className="flex items-center space-x-2 text-gray-600 hover:text-gray-800 cursor-pointer whitespace-nowrap nav-hover-item">
                 <Home size={16} />
                 <span>Home</span>
@@ -190,14 +217,6 @@ export default function NavbarReplica() {
               </a>
             </div>
 
-            {/* Mobile title (only visible on mobile) */}
-            <div className="md:hidden">
-               <a href="">
-                {/* <img className='img_fluid' src={marketPlaceLogo} alt="" /> */}
-                </a>
-              
-            </div>
-
             {/* Dropdown arrow */}
             <div className="flex items-center">
               <ChevronDown size={20} className="text-gray-600" />
@@ -206,55 +225,75 @@ export default function NavbarReplica() {
         </div>
       </div>
 
-      {/* Second Bar - Marketplace (Hidden on Mobile) */}
+      {/* Second Bar - Noon.com Style Marketplace */}
       <div className="hidden md:block bg-white border-b border-gray-200">
         <div className="w-[100%] mx-auto px-4 sm:px-6 lg:px-8 mid-nav">
           <div className="flex items-center justify-between h-16">
-            <div className="flex items-center space-x-4 ">
-              <Menu size={20} className="text-gray-600" />
-              <div className="flex items-center space-x-2">
-                <div className="bg-blue-600 text-white px-3 py-1 rounded text-sm font-medium  theme-btn">
-                  Marketplace
+            {/* Left Section - Noon Style */}
+            <div className="flex items-center space-x-6">
+              {/* Menu Icon */}
+              <Menu size={20} className="text-gray-600 cursor-pointer" />
+              
+              {/* Logo/Brand Section */}
+              <div className="flex items-center space-x-3">
+                {/* Main Logo - like noon */}
+                <div className="text-2xl font-bold text-gray-900">
+                  noon
                 </div>
-                <div className="bg-black text-white px-2 py-1 rounded text-xs">
+                
+                {/* Beta Badge */}
+                <div className="bg-black text-white px-2 py-1 rounded text-xs font-medium">
                   Beta
                 </div>
               </div>
-        <div className="bg-orange-500 text-white px-3 py-1 rounded-full text-sm font-medium flex items-center theme-btn">
-            <Tags size={16} className="mr-1" />
-            Categories
-            <ChevronDown size={16} className="ml-1" />
-            </div>
+              
+              {/* Categories Button */}
+              <div className="bg-orange-500 text-white px-4 py-2 rounded-full text-sm font-medium flex items-center theme-btn hover:bg-orange-600 transition-colors cursor-pointer">
+                <Tags size={16} className="mr-2" />
+                Categories
+                <ChevronDown size={16} className="ml-2" />
+              </div>
             </div>
 
-            <div className="hidden lg:flex flex-1 max-w-lg mx-8">
+            {/* Center - Search Bar (Noon Style) */}
+            <div className="hidden lg:flex flex-1 max-w-2xl mx-8">
               <div className="relative w-full">
                 <input
                   type="text"
-                  placeholder="For example PlayStation"
-                  className="w-full pl-4 pr-10 py-2 border border-gray-300 rounded-lg :border-transparent"
+                  placeholder="What are you looking for?"
+                  className="w-full pl-4 pr-12 py-3 border-2 border-gray-300 rounded-lg focus:border-orange-500 focus:outline-none text-sm bg-gray-50 focus:bg-white transition-all"
                 />
-                <Search size={20} className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-400" />
+                <div className="absolute right-1 top-1/2 transform -translate-y-1/2">
+                  <button className="bg-orange-500 hover:bg-orange-600 text-white p-2 rounded-md transition-colors">
+                    <Search size={18} />
+                  </button>
+                </div>
               </div>
             </div>
 
-            <div className="flex items-center space-x-4 icons-navbar">
-              <div className="hidden xl:flex items-center space-x-1 text-gray-600">
+            {/* Right Section - Icons */}
+            <div className="flex items-center space-x-6 icons-navbar">
+              {/* Contact Info */}
+              <div className="hidden xl:flex items-center space-x-2 text-gray-600 text-sm">
                 <Phone size={16} />
-                <span className="text-sm number">+1(800)777-7777</span>
+                <span className="number">+1(800)777-7777</span>
               </div>
-              <a href="#analytics" className="text-gray-600 hover:text-gray-800">
-                <BarChart3 size={20} />
-              </a>
-              <a href="#wishlist" className="text-gray-600 hover:text-gray-800">
-                <Heart size={20} />
-              </a>
-              <a href="#profile" className="text-gray-600 hover:text-gray-800">
-                <User size={20} />
-              </a>
-              <a href="#cart" className="text-gray-600 hover:text-gray-800">
-                <ShoppingCart size={20} />
-              </a>
+              
+              {/* Action Icons */}
+              <div className="flex items-center space-x-4">
+                <a href="#analytics" className="text-gray-600 hover:text-gray-900 transition-colors">
+                  <BarChart3 size={22} />
+                </a>
+                <a href="#wishlist" className="text-gray-600 hover:text-red-500 transition-colors">
+                  <Heart size={22} />
+                </a>
+                <a href="#profile" className="text-gray-600 hover:text-gray-900 transition-colors">
+                  <User size={22} />
+                </a>
+                <a href="#cart" className="text-gray-600 hover:text-orange-500 transition-colors">
+                  <ShoppingCart size={22} />
+                </a>
+              </div>
             </div>
           </div>
 
@@ -263,10 +302,14 @@ export default function NavbarReplica() {
             <div className="relative">
               <input
                 type="text"
-                placeholder="Search products..."
-                className="w-full pl-4 pr-10 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                placeholder="What are you looking for?"
+                className="w-full pl-4 pr-12 py-3 border-2 border-gray-300 rounded-lg focus:border-orange-500 focus:outline-none text-sm bg-gray-50 focus:bg-white"
               />
-              <Search size={20} className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-400" />
+              <div className="absolute right-1 top-1/2 transform -translate-y-1/2">
+                <button className="bg-orange-500 text-white p-2 rounded-md">
+                  <Search size={18} />
+                </button>
+              </div>
             </div>
           </div>
         </div>

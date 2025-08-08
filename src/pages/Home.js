@@ -128,7 +128,6 @@ const CarouselSlider = () => {
           </button>
         </div>
       </div>
-
       {/* Right Side Banner */}
       <div className="w-full lg:w-80 xl:w-96 mt-2 lg:mt-0">
         <div className="relative rounded-lg overflow-hidden banner-img">
@@ -140,31 +139,18 @@ const CarouselSlider = () => {
           {/* Optional overlay content */}
           <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
         </div>
-
-        
-
       </div>
     </div>
 
     {/* category slider */}
 
-    {/* <CategorySlider/> */}
-
-    {/* ecommerce layout */}
-
+    <CategorySlider/>
     {/* <EcommerceLayout/> */}
-
-{/* products recommend */}
-    {/* <RecommendedProducts/> */}
-
-    {/* today deals */}
-    
+    <RecommendedProducts/>    
     <TodaysDeals/>
-    {/* <RecommendedProducts/> */}
-
-    {/* <LatestNews/> */}
-
-    {/* <Footer/> */}
+    <RecommendedProducts/>
+    <LatestNews/>
+    <Footer/>
 
     </div>
 

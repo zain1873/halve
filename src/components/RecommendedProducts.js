@@ -188,7 +188,7 @@ const RecommendedProducts = () => {
 
   return (
     <div className="bg-white py-6">
-      <div className="max-w-7xl mx-auto px-4">
+      <div className="theme-padding px-4">
         {/* Header */}
         <h2 className="text-xl font-semibold text-gray-800 mb-4">Recommended for you</h2>
 
