@@ -1,14 +1,14 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 
 const CategorySlider = () => {
-  const [currentIndex, setCurrentIndex] = useState(0);
   const [isHovered, setIsHovered] = useState(false);
+  const scrollContainerRef = useRef(null);
 
   // Categories matching the image you shared
   const categories = [
     {
       id: 1,
-      name: 'Tools & Home Improvement',
+      name: 'Tools & Home',
       image: 'https://images.unsplash.com/photo-1572981779307-38b8cabb2407?w=150&h=150&fit=crop&crop=center',
       hasSale: false
     },
@@ -55,13 +55,11 @@ const CategorySlider = () => {
       hasSale: false
     },
     {
-
-    id: 9,
-    name: "Kids' Fashion",
-    image: 'https://images.unsplash.com/photo-1502920917128-1aa500764cbd?w=150&h=150&fit=crop&crop=center',
-    hasSale: true
-  },
-
+      id: 9,
+      name: "Kids' Fashion",
+      image: 'https://images.unsplash.com/photo-1502920917128-1aa500764cbd?w=150&h=150&fit=crop&crop=center',
+      hasSale: true
+    },
     {
       id: 10,
       name: 'Pet Store',
@@ -106,58 +104,40 @@ const CategorySlider = () => {
     }
   ];
 
-  // Responsive items per view
-  const getItemsPerView = () => {
-    if (window.innerWidth >= 1536) return 10; // 2xl
-    if (window.innerWidth >= 1280) return 8;  // xl
-    if (window.innerWidth >= 1024) return 6;  // lg
-    if (window.innerWidth >= 768) return 4;   // md
-    if (window.innerWidth >= 640) return 3;   // sm
-    return 2; // mobile
-  };
-
-  const [itemsPerView, setItemsPerView] = useState(getItemsPerView());
-
-  useEffect(() => {
-    const handleResize = () => {
-      setItemsPerView(getItemsPerView());
-    };
-
-    window.addEventListener('resize', handleResize);
-    return () => window.removeEventListener('resize', handleResize);
-  }, []);
-
-  // Auto-move continuously one by one like Owl Carousel
+  // Auto-scroll functionality - same as RecommendedProducts
   useEffect(() => {
     if (!isHovered) {
       const interval = setInterval(() => {
-        setCurrentIndex((prev) => {
-          const maxIndex = categories.length - itemsPerView;
-          return prev >= maxIndex ? 0 : prev + 1;
-        });
-      }, 2000); // Continuous movement every 2 seconds
+        scroll('right');
+      }, 2500); // Auto-scroll every 2.5 seconds
 
       return () => clearInterval(interval);
     }
-  }, [isHovered, categories.length, itemsPerView]);
+  }, [isHovered]);
 
-  const nextSlide = () => {
-    setCurrentIndex((prev) => {
-      const maxIndex = categories.length - itemsPerView;
-      return prev >= maxIndex ? 0 : prev + 1;
-    });
+  const scroll = (direction) => {
+    if (scrollContainerRef.current) {
+      const container = scrollContainerRef.current;
+      const scrollAmount = 150; // Scroll amount for categories
+      const maxScroll = container.scrollWidth - container.clientWidth;
+      
+      if (direction === 'left') {
+        if (container.scrollLeft <= 0) {
+          // If at start, go to end
+          container.scrollTo({ left: maxScroll, behavior: 'smooth' });
+        } else {
+          container.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
+        }
+      } else {
+        if (container.scrollLeft >= maxScroll - 10) {
+          // If at end, go to start
+          container.scrollTo({ left: 0, behavior: 'smooth' });
+        } else {
+          container.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+        }
+      }
+    }
   };
-
-  const prevSlide = () => {
-    setCurrentIndex((prev) => {
-      const maxIndex = categories.length - itemsPerView;
-      return prev <= 0 ? maxIndex : prev - 1;
-    });
-  };
-
-  // Calculate visible items and scroll position - no extra space
-  const itemWidth = 100 / itemsPerView;
-  const translateX = -(currentIndex * itemWidth);
 
   return (
     <div className="w-full bg-gray-50 py-4 category-slider">
@@ -165,8 +145,9 @@ const CategorySlider = () => {
         
         {/* Navigation Arrows */}
         <button
-          onClick={prevSlide}
+          onClick={() => scroll('left')}
           className="absolute left-0 top-1/2 transform -translate-y-1/2 z-20 bg-white shadow-lg rounded-full p-2 hover:bg-gray-50 transition-colors border"
+          style={{ marginLeft: '-20px' }}
           aria-label="Previous"
         >
           <svg className="w-4 h-4 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -175,8 +156,9 @@ const CategorySlider = () => {
         </button>
 
         <button
-          onClick={nextSlide}
+          onClick={() => scroll('right')}
           className="absolute right-0 top-1/2 transform -translate-y-1/2 z-20 bg-white shadow-lg rounded-full p-2 hover:bg-gray-50 transition-colors border"
+          style={{ marginRight: '-20px' }}
           aria-label="Next"
         >
           <svg className="w-4 h-4 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -184,65 +166,56 @@ const CategorySlider = () => {
           </svg>
         </button>
 
-        {/* Categories Container */}
+        {/* Categories Container - Now using scroll like RecommendedProducts */}
         <div 
-          className="overflow-hidden mx-8"
+          ref={scrollContainerRef}
+          className="flex gap-4 overflow-x-auto scrollbar-hide scroll-smooth mx-8"
+          style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
           onMouseEnter={() => setIsHovered(true)}
           onMouseLeave={() => setIsHovered(false)}
         >
-          <div 
-            className="flex transition-transform duration-500 ease-in-out"
-            style={{ 
-              transform: `translateX(${translateX}%)`,
-              width: `${categories.length * itemWidth}%`
-            }}
-          >
-            {categories.map((category, index) => (
-              <div 
-                key={category.id} 
-                className="flex-shrink-0 px-1 sm:px-2"
-                style={{ width: `${itemWidth}%` }}
-              >
-                <div className="flex flex-col items-center cursor-pointer group">
-                  {/* Category Image Circle with Sale Badge */}
-                  <div className="relative mb-2">
-                    <div className="w-12 h-12 sm:w-16 sm:h-16 md:w-20 md:h-20 lg:w-24 lg:h-24 rounded-full overflow-hidden bg-white shadow-sm group-hover:shadow-md transition-shadow border border-gray-100">
-                      <img
-                        src={category.image || "/placeholder.svg"}
-                        alt={category.name}
-                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-200"
-                      />
-                    </div>
-                    {/* Sale Badge */}
-                    {category.hasSale && (
-                      <div className="absolute -top-1 -right-1 bg-red-500 text-white text-xs font-bold px-1.5 py-0.5 rounded-full shadow-sm">
-                        SALE
-                      </div>
-                    )}
+          {categories.map((category) => (
+            <div 
+              key={category.id} 
+              className="flex-shrink-0"
+            >
+              <div className="flex flex-col items-center cursor-pointer group">
+                {/* Category Image Circle with Sale Badge */}
+                <div className="relative mb-2">
+                  <div className="w-12 h-12 sm:w-16 sm:h-16 md:w-20 md:h-20 lg:w-24 lg:h-24 rounded-full overflow-hidden bg-white shadow-sm group-hover:shadow-md transition-shadow border border-gray-100">
+                    <img
+                      src={category.image || "/placeholder.svg"}
+                      alt={category.name}
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-200"
+                    />
                   </div>
-                  
-                  {/* Category Name */}
-                  <span className="text-xs sm:text-sm text-center text-gray-700 font-medium leading-tight max-w-full">
-                    {category.name}
-                  </span>
+                  {/* Sale Badge */}
+                  {category.hasSale && (
+                    <div className="absolute -top-1 -right-1 bg-red-500 text-white text-xs font-bold px-1.5 py-0.5 rounded-full shadow-sm">
+                      SALE
+                    </div>
+                  )}
                 </div>
+                
+                {/* Category Name */}
+                <span className="text-xs sm:text-sm text-center text-gray-700 font-medium leading-tight max-w-full">
+                  {category.name}
+                </span>
               </div>
-            ))}
-          </div>
+            </div>
+          ))}
         </div>
 
-        {/* Bottom Scroll Bar Indicator */}
-        <div className="flex justify-center mt-4 px-8">
-          <div className="w-full max-w-xs bg-gray-200 rounded-full h-1 relative">
-            <div 
-              className="bg-black h-1 rounded-full transition-all duration-500 ease-in-out"
-              style={{ 
-                width: `${(itemsPerView / categories.length) * 100}%`,
-                transform: `translateX(${(currentIndex / (categories.length - itemsPerView)) * 100}%)`
-              }}
-            />
-          </div>
-        </div>
+        {/* CSS to hide scrollbar */}
+        <style jsx>{`
+          .scrollbar-hide::-webkit-scrollbar {
+            display: none;
+          }
+          .scrollbar-hide {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+          }
+        `}</style>
       </div>
     </div>
   );

@@ -74,3 +74,17 @@ font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 .category-slider {
     padding: 40px 0;
 }
+
+
+
+
+/* responsivess */
+
+@media (max-width: 768px) {
+  .banner-img {
+    height: auto !important;
+  }
+  .banner-slider {
+    padding: 0;
+  }
+}

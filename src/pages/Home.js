@@ -160,10 +160,11 @@ const CarouselSlider = () => {
     {/* today deals */}
     
     <TodaysDeals/>
+    {/* <RecommendedProducts/> */}
 
-    <LatestNews/>
+    {/* <LatestNews/> */}
 
-    <Footer/>
+    {/* <Footer/> */}
 
     </div>
 
