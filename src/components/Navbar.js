@@ -193,7 +193,7 @@ export default function NavbarReplica() {
             {/* Mobile title (only visible on mobile) */}
             <div className="md:hidden">
                <a href="">
-                <img className='img_fluid' src={marketPlaceLogo} alt="" />
+                {/* <img className='img_fluid' src={marketPlaceLogo} alt="" /> */}
                 </a>
               
             </div>
