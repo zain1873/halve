@@ -148,14 +148,14 @@ const CarouselSlider = () => {
 
     {/* category slider */}
 
-    <CategorySlider/>
+    {/* <CategorySlider/> */}
 
     {/* ecommerce layout */}
 
     {/* <EcommerceLayout/> */}
 
 {/* products recommend */}
-    <RecommendedProducts/>
+    {/* <RecommendedProducts/> */}
 
     {/* today deals */}
     
