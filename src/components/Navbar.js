@@ -227,7 +227,7 @@ export default function NavbarReplica() {
 
       {/* Second Bar - Noon.com Style Marketplace */}
       <div className="hidden md:block bg-white border-b border-gray-200">
-        <div className="w-[100%] mx-auto px-4 sm:px-6 lg:px-8 mid-nav">
+        <div className="w-[100%] mx-auto px-4 sm:px-6 lg:px-8 mid-nav bg-[#feee00]">
           <div className="flex items-center justify-between h-16">
             {/* Left Section - Noon Style */}
             <div className="flex items-center space-x-6">
@@ -317,8 +317,8 @@ export default function NavbarReplica() {
 
       {/* Third Bar - Navigation Menu (Hidden on Mobile) */}
       <div className="hidden md:block bg-white border-b border-gray-200">
-        <div className="w-[100%] mx-auto px-4 sm:px-6 lg:px-8 mid-nav">
-          <div className="flex items-center justify-between h-12 ">
+        <div className="max-w-7xl">
+          <div className="flex items-center justify-between h-12  nav-bar-main">
             <div className="flex items-center space-x-6 text-sm whitespace-nowrap nav-items">
               <a href="#browse" className="flex items-center space-x-1 text-gray-700 hover:text-gray-900 cursor-pointer">
                 <span>Browse Shop</span>

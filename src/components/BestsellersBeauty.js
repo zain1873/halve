@@ -39,124 +39,124 @@ const RecommendedProducts = () => {
   const products = [
     {
       id: 1,
-      title: "Apple iPhone 16 Pro Max 256GB Desert Titanium 5G With FaceTime - Middle East Version",
-      image: "https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?w=400&h=400&fit=crop&auto=format&q=80",
-      rating: 4.6,
-      reviews: "24.2K",
-      price: "4,469",
-      originalPrice: "5,099",
-      discount: "12%",
+      title: "Lattafa Khamrah Unisex Eau De Parfum by Lattafa 100ml",
+      image: "https://images.unsplash.com/photo-1541643600914-78b084683601?w=400&h=400&fit=crop&auto=format&q=80",
+      rating: 4.5,
+      reviews: "3.7K",
+      price: "750",
+      originalPrice: "1,299",
+      discount: "41%",
       badge: "Best Seller",
-      delivery: "Free Delivery",
+      delivery: "4300+ sold recently",
       express: true,
-      ranking: null
+      ranking: "#11 in Face Serums"
     },
     {
       id: 2,
-      title: "Samsung Galaxy S24 Ultra 5G Dual SIM Titanium Gray 12GB RAM 256GB - Middle East...",
-      image: "https://images.unsplash.com/photo-1610945265064-0e34e5519bbf?w=400&h=400&fit=crop&auto=format&q=80",
-      rating: 4.5,
-      reviews: "22.9K",
-      price: "2,749",
-      originalPrice: "4,949",
-      discount: "44%",
+      title: "PharmaHealth Eventone C Cream 30g Skin lightening and brightening sunscreen with L...",
+      image: "https://images.unsplash.com/photo-1556228578-8c89e6adf883?w=400&h=400&fit=crop&auto=format&q=80",
+      rating: 4.3,
+      reviews: "166",
+      price: "109",
+      originalPrice: null,
+      discount: null,
       badge: "Best Seller",
-      delivery: null,
-      express: true,
-      ranking: "#6 in Smartphones"
+      delivery: "#11 in Face Serums",
+      express: false,
+      superMall: false
     },
     {
       id: 3,
-      title: "Apple iPhone 15 Pro 256GB Blue Titanium 5G With FaceTime - International Version",
-      image: "https://images.unsplash.com/photo-1592750475338-74b7b21085ab?w=400&h=400&fit=crop&auto=format&q=80",
-      rating: 4.6,
-      reviews: "24.2K",
-      price: "4,549",
-      originalPrice: "5,099",
-      discount: "10%",
+      title: "Beauty of Joseon Relief Sun Rice + Probiotics Sunscreen for face moisturizing sunblock with SPF...",
+      image: "https://images.unsplash.com/photo-1620916566398-39f1143ab7be?w=400&h=400&fit=crop&auto=format&q=80",
+      rating: 3.9,
+      reviews: "4.3K",
+      price: "32.95",
+      originalPrice: "55",
+      discount: "61%",
       badge: "Best Seller",
-      delivery: "Selling out fast",
-      express: false,
-      superMall: true
+      delivery: "3700+ sold recently",
+      express: true,
+      superMall: false
     },
     {
       id: 4,
-      title: "Samsung Galaxy S24 Ultra 5G Dual SIM Titanium Black 12GB RAM 256GB - Middle East...",
-      image: "https://images.unsplash.com/photo-1583394838336-acd977736f90?w=400&h=400&fit=crop&auto=format&q=80",
-      rating: 4.5,
-      reviews: "22.9K",
-      price: "2,590",
-      originalPrice: "4,949",
-      discount: "47%",
+      title: "The Ordinary Niacinamide 10% And Zinc 1% Clear 30ml",
+      image: "https://images.unsplash.com/photo-1596462502278-27bfdc403348?w=400&h=400&fit=crop&auto=format&q=80",
+      rating: 3.8,
+      reviews: "14.1K",
+      price: "32.15",
+      originalPrice: "55",
+      discount: "41%",
       badge: "Best Seller",
-      delivery: null,
+      delivery: "2400+ sold recently",
       express: false,
-      ranking: "#5 in Smartphones",
+      ranking: null,
       superMall: true
     },
     {
       id: 5,
-      title: "Samsung Galaxy S25 Ultra AI Dual SIM Titanium Black 12GB RAM 256GB 5G - Middle East...",
-      image: "https://images.unsplash.com/photo-1574944985070-8f3ebc6b79d2?w=400&h=400&fit=crop&auto=format&q=80",
-      rating: 4.5,
-      reviews: "3.2K",
-      price: "3,225",
-      originalPrice: "5,099",
-      discount: "36%",
+      title: "BARE ANATOMY Bare Anatomy Nature x Science Rosemary Water Spray for Hair Growth &...",
+      image: "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=400&h=400&fit=crop&auto=format&q=80",
+      rating: 4.3,
+      reviews: "51",
+      price: "29.95",
+      originalPrice: null,
+      discount: null,
       badge: "Best Seller",
-      delivery: null,
+      delivery: "70+ sold recently",
       express: false,
-      ranking: "#3 in Smartphones",
+      ranking: null,
       superMall: true,
       featured: true
     },
     {
       id: 6,
-      title: "Sony PlayStation 5 Slim Console International Version Digital Edition With Controller",
-      image: "https://images.unsplash.com/photo-1606144042614-b2417e99c4e3?w=400&h=400&fit=crop&auto=format&q=80",
+      title: "Nizoral Anti-Dandruff Treatment Shampoo, 100 Ml, Effective Dandruff Treatment, Works Pro...",
+      image: "https://images.unsplash.com/photo-1527799820374-dcf8d9d4a388?w=400&h=400&fit=crop&auto=format&q=80",
       rating: 4.5,
-      reviews: "2.1K",
-      price: "1,599",
-      originalPrice: "1,699",
+      reviews: "928",
+      price: "47.05",
+      originalPrice: null,
       discount: null,
       badge: "Best Seller",
-      delivery: null,
+      delivery: "1500+ sold recently",
       express: true,
-      ranking: "#2 in Gaming Consoles"
+      ranking: null
     },
     {
       id: 7,
-      title: "Apple MacBook Pro 14-inch M3 Pro Chip 18GB RAM 512GB SSD - Space Black",
-      image: "https://images.unsplash.com/photo-1541807084-5c52b6b3adef?w=400&h=400&fit=crop&auto=format&q=80",
+      title: "CeraVe Foaming Facial Cleanser for Normal to Oily Skin 473ml",
+      image: "https://images.unsplash.com/photo-1556228720-195a672e8a03?w=400&h=400&fit=crop&auto=format&q=80",
       rating: 4.7,
       reviews: "15.8K",
-      price: "8,999",
-      originalPrice: "12,499",
+      price: "899",
+      originalPrice: "1,249",
       discount: "28%",
       badge: "Best Seller",
       delivery: "Free Delivery",
       express: true,
-      ranking: "#1 in Laptops"
+      ranking: "#1 in Face Cleansers"
     },
     {
       id: 8,
-      title: "Dell XPS 13 Plus 13.4-inch Touch Laptop Intel Core i7 16GB RAM 1TB SSD",
-      image: "https://images.unsplash.com/photo-1496181133206-80ce9b88a853?w=400&h=400&fit=crop&auto=format&q=80",
+      title: "Olay Regenerist Micro-Sculpting Cream Face Moisturizer 50g",
+      image: "https://images.unsplash.com/photo-1570194065650-d99fb4bedf0a?w=400&h=400&fit=crop&auto=format&q=80",
       rating: 4.4,
       reviews: "8.9K",
-      price: "6,299",
-      originalPrice: "8,999",
+      price: "629",
+      originalPrice: "899",
       discount: "30%",
       badge: "Best Seller",
       delivery: null,
       express: false,
-      ranking: "#4 in Laptops",
+      ranking: "#4 in Face Moisturizers",
       superMall: true
     },
     {
       id: 9,
-      title: "Apple AirPods Pro 2nd Generation with USB-C Charging Case",
-      image: "https://images.unsplash.com/photo-1606220588913-b3aacb4d2f46?w=400&h=400&fit=crop&auto=format&q=80",
+      title: "Maybelline New York Fit Me Matte + Poreless Foundation 30ml",
+      image: "https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?w=400&h=400&fit=crop&auto=format&q=80",
       rating: 4.8,
       reviews: "45.2K",
       price: "899",
@@ -165,12 +165,12 @@ const RecommendedProducts = () => {
       badge: "Best Seller",
       delivery: "Free Delivery",
       express: true,
-      ranking: "#1 in Headphones"
+      ranking: "#1 in Foundation"
     },
     {
       id: 10,
-      title: "Nintendo Switch OLED Model with White Joy-Con Controllers",
-      image: "https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=400&h=400&fit=crop&auto=format&q=80",
+      title: "L'Oréal Paris Revitalift Crystal Micro-Essence 130ml Anti-Aging Serum",
+      image: "https://images.unsplash.com/photo-1596755389378-c31d21fd1273?w=400&h=400&fit=crop&auto=format&q=80",
       rating: 4.6,
       reviews: "32.1K",
       price: "1,299",
@@ -179,23 +179,23 @@ const RecommendedProducts = () => {
       badge: "Best Seller",
       delivery: null,
       express: false,
-      ranking: "#3 in Gaming Consoles",
+      ranking: "#3 in Anti-Aging Serums",
       superMall: true
     }
   ];
 
   return (
-    <div className="bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-100 py-8">
+    <div className="bg-gradient-to-br from-slate-50 to-gray-100 py-8">
       <div className="max-w-7xl mx-auto px-6">
         {/* Enhanced Header */}
         <div className="mb-8">
           <div className="flex items-center gap-3 mb-2">
-            <div className="w-1 h-8 bg-gradient-to-b from-blue-500 to-indigo-600 rounded-full"></div>
+            <div className="w-1 h-8 bg-gradient-to-b from-pink-500 to-purple-600 rounded-full"></div>
             <h2 className="text-3xl font-bold bg-gradient-to-r from-gray-800 to-gray-600 bg-clip-text text-transparent">
-              Recommended for you
+              Bestsellers in Beauty
             </h2>
           </div>
-          <p className="text-gray-600 text-sm ml-7">Discover cutting-edge technology at amazing prices</p>
+          <p className="text-gray-600 text-sm ml-7">Discover our most loved beauty essentials</p>
         </div>
 
         {/* Enhanced Slider Container */}
@@ -295,12 +295,12 @@ const ProductCard = ({ product, favorites, toggleFavorite }) => {
         </div>
 
         {/* Enhanced Add to Cart Button */}
-        <button className="w-full mt-4 border-2 border-gray-200 rounded-xl py-3 hover:border-blue-400 hover:bg-blue-50 transition-all duration-300 group/cart">
+        <button className="w-full mt-4 border-2 border-gray-200 rounded-xl py-3 hover:border-purple-400 hover:bg-purple-50 transition-all duration-300 group/cart">
           <div className="flex items-center justify-center gap-2">
-            <svg className="w-5 h-5 text-gray-600 group-hover/cart:text-blue-600 transition-colors duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <svg className="w-5 h-5 text-gray-600 group-hover/cart:text-purple-600 transition-colors duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 3h2l.4 2M7 13h10l4-8H5.4m0 0L7 13m0 0l-1.5 1.5M7 13l1.5 1.5m4.5-1.5h6" />
             </svg>
-            <span className="text-sm font-medium text-gray-600 group-hover/cart:text-blue-600 transition-colors duration-300">Add to Cart</span>
+            <span className="text-sm font-medium text-gray-600 group-hover/cart:text-purple-600 transition-colors duration-300">Add to Cart</span>
           </div>
         </button>
       </div>
@@ -325,11 +325,11 @@ const ProductCard = ({ product, favorites, toggleFavorite }) => {
 
         {/* Enhanced Price */}
         <div className="flex items-center mb-3 flex-wrap gap-2">
-          <span className="text-xl font-bold bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent">₹ {product.price}</span>
+          <span className="text-xl font-bold bg-gradient-to-r from-red-600 to-pink-600 bg-clip-text text-transparent">₹ {product.price}</span>
           {product.originalPrice && (
             <>
               <span className="text-sm text-gray-500 line-through">₹ {product.originalPrice}</span>
-              <span className="text-xs bg-gradient-to-r from-green-500 to-emerald-500 text-white px-2 py-1 rounded-full font-medium shadow-sm">{product.discount}</span>
+              <span className="text-xs bg-gradient-to-r from-red-500 to-pink-500 text-white px-2 py-1 rounded-full font-medium shadow-sm">{product.discount}</span>
             </>
           )}
         </div>

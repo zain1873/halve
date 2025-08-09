@@ -12,6 +12,17 @@ import TodaysDeals from '../components/TodayDeals';
 import RecommendedProducts from '../components/RecommendedProducts';
 import Footer from '../components/Footer';
 import LatestNews from '../components/LatestNews';
+import FashionSections from '../components/FashionSections';
+import BeautyHomeSections from '../components/BeautyHomeSections';
+import ElectronicsMobileSections from '../components/ElectronicsMobileSections';
+import LaptopsKidsSections from '../components/LaptopsKidsSections';
+import HealthGrocerySections from '../components/HealthGrocerySections';
+import FurnitureFragrancesSections from '../components/FurnitureFragrancesSections';
+import BabyToysSections from '../components/BabyToysSections';
+import EyewearWatchesSections from '../components/EyewearWatchesSections';
+import SportsAutomotiveSections from '../components/SportsAutomotiveSections';
+import UAEShoppingSection from '../components/UAEShoppingSection';
+import BestsellersBeauty from '../components/BestsellersBeauty';
 
 
 const CarouselSlider = () => {
@@ -148,7 +159,17 @@ const CarouselSlider = () => {
     {/* <EcommerceLayout/> */}
     <RecommendedProducts/>    
     <TodaysDeals/>
-    <RecommendedProducts/>
+    <BestsellersBeauty/>
+    <FashionSections/>
+    <BeautyHomeSections/>
+    <ElectronicsMobileSections/>
+    <LaptopsKidsSections/>
+    <HealthGrocerySections/>
+    <FurnitureFragrancesSections/>
+    <BabyToysSections/>
+    <EyewearWatchesSections/>
+    <SportsAutomotiveSections/>
+    <UAEShoppingSection/>
     <LatestNews/>
     <Footer/>
 
